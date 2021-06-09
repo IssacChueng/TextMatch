@@ -43,8 +43,8 @@ class DataPrecessForSentence(Dataset):
             labels      : 标签取值为{0,1}，其中0表示负样本，1代表正样本。
         """
         df = pd.read_csv(file)
-        sentences_1 = map(HanziConv.toSimplified, df['sentence1'].values)
-        sentences_2 = map(HanziConv.toSimplified, df['sentence2'].values)
+        sentences_1 = map(HanziConv.toSimplified, df['text_a'].values)
+        sentences_2 = map(HanziConv.toSimplified, df['text_b'].values)
         labels = df['label'].values
         # 切词
         tokens_seq_1 = list(map(self.bert_tokenizer.tokenize, sentences_1))

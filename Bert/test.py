@@ -15,7 +15,8 @@ from data import DataPrecessForSentence
 def main(test_file, pretrained_file, batch_size=32):
 
     device = torch.device("cuda")
-    bert_tokenizer = BertTokenizer.from_pretrained('models/vocabs.txt', do_lower_case=True)
+    #bert_tokenizer = BertTokenizer.from_pretrained('models/vocabs.txt', do_lower_case=True)
+    bert_tokenizer = BertTokenizer.from_pretrained('bert-base-chinese', do_lower_case=True)
     print(20 * "=", " Preparing for testing ", 20 * "=")
     if platform == "linux" or platform == "linux2":
         checkpoint = torch.load(pretrained_file)
@@ -34,4 +35,4 @@ def main(test_file, pretrained_file, batch_size=32):
 
 
 if __name__ == "__main__":
-    main("../data/LCQMC_test.csv", "models/best.pth.tar")
+    main("../data/lcqmc/test.csv", "models/best.pth.tar")

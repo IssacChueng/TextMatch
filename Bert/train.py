@@ -109,4 +109,4 @@ def main(train_file, dev_file, target_dir,
             break
     
 if __name__ == "__main__":
-    main("../data/LCQMC_train.csv", "../data/LCQMC_dev.csv", "models")
+    main("../data/lcqmc/train.csv", "../data/lcqmc/dev.csv", "models")
